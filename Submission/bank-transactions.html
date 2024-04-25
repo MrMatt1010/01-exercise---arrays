@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Arrays</title>
+
+    <link rel="icon" href="favicon.ico?v=1.0" />
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Your transactions</h1>
+      <ul id="transactions" class="transactions"></ul>
+    </div>
+
+    <script src="static/js/script.js"></script>
+    <script>
+      if (typeof bankTransactions !== "undefined") {
+        const transactionsEl = document.getElementById("transactions");
+
+        const transactionsItems = bankTransactions.map((transaction) => {
+          const isPositive = transaction > 0;
+          const className = isPositive ? "positive" : "negative";
+          return `
+            <li class="transactions-item ${className}">
+              ${isPositive ? "+" : ""}${transaction}
+            </li>
+          `;
+        });
+
+        const totalQty = bankTransactions.reduce(
+          (accumulator, current) => accumulator + current,
+          0
+        );
+        const totalQtyHTML = `<li class="transactions-item total">Total: ${totalQty}</li>`;
+        transactionsEl.innerHTML = transactionsItems.join("") + totalQtyHTML;
+      }
+    </script>
+  </body>
+</html>

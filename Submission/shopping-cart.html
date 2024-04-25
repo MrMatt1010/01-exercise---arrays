@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Arrays</title>
+
+    <link rel="icon" href="favicon.ico?v=1.0" />
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Your shopping cart</h1>
+
+      <table id="shoppingCart"></table>
+    </div>
+
+    <script src="static/js/script.js"></script>
+    <script>
+      if (typeof cartItems !== "undefined") {
+        const shoppingCartEl = document.getElementById("shoppingCart");
+        const tableHeadingHTML = `
+          <tr>
+            <th>Items</th>
+            <th>Quantity</th>
+          </tr>
+        `;
+        const cartItemHTML = cartItems
+          .map(
+            (item) => `
+            <tr>
+              <td>${item[0]}</td>
+              <td>${item[1]}</td>
+            </tr>
+          `
+          )
+          .join("");
+
+        const totalQty = cartItems.reduce(
+          (accumulator, item) => accumulator + item[1],
+          0
+        );
+        const totalQtyHTML = `
+          <tr class="total">
+            <td>Total quantity</td>
+            <td>${totalQty}</td>
+          </tr>
+        `;
+
+        shoppingCartEl.innerHTML =
+          tableHeadingHTML + cartItemHTML + totalQtyHTML;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Arrays</title>
+
+    <link rel="icon" href="favicon.ico?v=1.0" />
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <a
+          href="https://nadialim.com/gooey-campfire-chocolate-and-marshmallow-bananas/"
+          >Gooey campfire chocolate and marshmallow bananas</a
+        >
+      </h1>
+      <img
+        src="static/img/Gooey-campfire-chocolate-and-marshmallow-bananas.png"
+        alt=""
+      />
+      <h2>Ingredients</h2>
+      <ul>
+        <li>ripe bananas 4</li>
+        <li>
+          marshmallows 12-15, cut into quarters (check label if eating
+          gluten-free)
+        </li>
+        <li>
+          milk chocolate 100g, roughly chopped (use dairy-free if required)
+        </li>
+        <li>chopped nuts or thread coconut (optional)</li>
+        <li>
+          yoghurt or coconut yoghurt (optional, use coconut yoghurt for
+          dairy-free)
+        </li>
+      </ul>
+      <h2>Method</h2>
+      <ol id="recipe-method"></ol>
+    </div>
+
+    <script src="static/js/script.js"></script>
+    <script>
+      // Recipe
+      if (typeof recipeMethod !== "undefined") {
+        const recipeMethodItems = recipeMethod.map(
+          (item) => `<li>${item}</li>`
+        );
+        const recipeMethodEl = document.getElementById("recipe-method");
+        recipeMethodEl.innerHTML = recipeMethodItems.join("");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Arrays</title>
+
+    <link rel="icon" href="favicon.ico?v=1.0" />
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🏇 Horse Race results</h1>
+
+      <h2>🥇 Winner</h2>
+      <p id="winner"></p>
+
+      <hr />
+
+      <h2>🥈 Second</h2>
+      <p id="second"></p>
+
+      <hr />
+
+      <h2>🥉 Third</h2>
+      <p id="third"></p>
+
+      <h2>💸 Other horses</h2>
+      <p id="rest"></p>
+    </div>
+
+    <script src="static/js/script.js"></script>
+    <script>
+      if (typeof raceWinner !== "undefined") {
+        const winnerEl = document.getElementById("winner");
+        winnerEl.innerText = raceWinner;
+      }
+
+      if (typeof raceSecond !== "undefined") {
+        const secondEl = document.getElementById("second");
+        secondEl.innerText = raceSecond;
+      }
+
+      if (typeof raceThird !== "undefined") {
+        const thirdEl = document.getElementById("third");
+        thirdEl.innerText = raceThird;
+      }
+
+      if (typeof restOfResults !== "undefined") {
+        const restEl = document.getElementById("rest");
+        restEl.innerText = restOfResults.join(", ");
+      }
+    </script>
+  </body>
+</html>
